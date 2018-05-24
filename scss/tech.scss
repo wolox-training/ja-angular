@@ -17,6 +17,11 @@
     padding: 10px;
     top: 8em;
     width: 200px;
+    transition: box-shadow 0.5s ease;
+
+    &:hover {
+      box-shadow: 8px 8px 0 0 white, 8px 8px 0 1px $green;
+    }
   
     .logo {
       height: 100px;
