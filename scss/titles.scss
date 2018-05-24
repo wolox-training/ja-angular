@@ -1,19 +1,19 @@
 .title-container {
-	position:absolute;
+  position:absolute;
 
 
-	.triangle {
-		width: 100px;
-		position: absolute;	
-		height: 90px;
-		z-index: -1;
-	}
+  .triangle {
+    width: 100px;
+    position: absolute;	
+    height: 90px;
+    z-index: -1;
+  }
 
-	.title {
-		font-size: 24px;
-		font-weight: bold;
-		margin-top: 45px;
-		margin-left: 70px;
-		position: static;
-	}
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 45px;
+    margin-left: 70px;
+    position: static;
+  }
 }
