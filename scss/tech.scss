@@ -1,29 +1,35 @@
-.tech {
-  align-items: center;
-  border-radius: 6px;
-  box-shadow: -8px -8px 0 0 white, -8px -8px 0 1px $green;
+.tech-container {
   display: flex;
-  justify-content: space-between;
-  background-color: $green;
-  flex-direction: column;
-  flex-wrap: wrap;	
-  height: 300px;
-  padding: 20px;
-  position: relative;
-  top: 8em;
-  width: 200px;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  padding: 0 75px;
 
-  .logo {
-    height: 100px;
-    width: 100px;
-  }
-
-  .release {
-    font-weight: bold;
-  }
-
-  .description {
-    text-align: center;
-    margin-bottom: 30px;
+  .tech {
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: -8px -8px 0 0 white, -8px -8px 0 1px $green;
+    display: flex;
+    justify-content: space-between;
+    background-color: $green;
+    flex-direction: column;
+    height: 300px;
+    margin: 15px;
+    padding: 10px;
+    top: 8em;
+    width: 200px;
+  
+    .logo {
+      height: 100px;
+      width: 100px;
+    }
+  
+    .release {
+      font-weight: bold;
+    }
+  
+    .description {
+      text-align: center;
+      margin-bottom: 30px;
+    }
   }
 }
