@@ -1,11 +1,12 @@
 .body {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
 
   .container {
     display: flex;
     flex-direction: column;
     margin: 0 20%;
-    position: absolute;
-    top: 80px;
+    padding-top: 90px;
   }
 }
