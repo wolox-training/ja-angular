@@ -7,7 +7,7 @@
   .tech {
     align-items: center;
     border-radius: 6px;
-    box-shadow: -8px -8px 0 0 white, -8px -8px 0 1px $green;
+    box-shadow: -8px -8px 0 0 $white, -8px -8px 0 1px $green;
     display: flex;
     justify-content: space-between;
     background-color: $green;
@@ -16,6 +16,11 @@
     margin: 15px;
     padding: 10px;
     width: 200px;
+    transition: box-shadow 0.5s ease;
+
+    &:hover {
+      box-shadow: 8px 8px 0 0 $white, 8px 8px 0 1px $green;
+    }
   
     .logo {
       height: 100px;
