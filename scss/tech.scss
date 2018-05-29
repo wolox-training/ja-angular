@@ -8,10 +8,20 @@
     ". main sec1 sec2"
     ". main sec3 sec4";
 
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .main {
     grid-area: main;
     border-right: 1px solid $green;
     justify-content: center;
+
+    @media screen and (max-width: 1024px) {
+      border-right: none;
+    }
   }
 
   .sec1 {
@@ -37,7 +47,16 @@
     flex-direction: column;
     margin: 15px;
     padding: 10px;
-    width: 200px;   
+    width: 200px;
+    
+    @media screen and (max-width: 1024px) {
+      border-right: none;
+      border-bottom: 1px solid $green;
+
+      &:last-of-type{
+        border-bottom: none;
+      }
+    }
   
     .logo {
       height: 100px;
