@@ -1,40 +1,43 @@
 .tech-container {
-  display: flex;
-  flex-wrap: wrap;
   margin: 50px 0;
   padding: 20px 75px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    ". main sec1 sec2"
+    ". main sec3 sec4";
+
+  .main {
+    grid-area: main;
+    border-right: 1px solid $green;
+    justify-content: center;
+  }
+
+  .sec1 {
+    grid-area: sec1;
+  }
+
+  .sec2 {
+    grid-area: sec2;
+  }
+
+  .sec3 {
+    grid-area: sec3;
+  }
+
+  .sec4 {
+    grid-area: sec4;
+  }
 
   .tech {
     align-items: center;
     position: relative;
-    border-radius: 6px;
     display: flex;
-    background-color: $green;
     flex-direction: column;
     margin: 15px;
     padding: 10px;
     width: 200px;   
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      border: 1px solid $green;
-      height: 100%;
-      width: 100%;
-      border-radius: 6px;
-      z-index: -1;
-      transition: 0.5s top ease, 0.5s left ease;
-    }
-
-    &:hover {
-
-      &::before {
-        top: 10px;
-        left: 10px;
-      }      
-    }
   
     .logo {
       height: 100px;
