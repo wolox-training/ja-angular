@@ -1,16 +1,17 @@
 .title-container {
 
-  .triangle {
-    width: 100px;
-    position: absolute;	
-    height: 90px;
-    z-index: -1;
-  }
-
   .title {
     font-size: 24px;
     font-weight: bold;
-    margin-top: 45px;
-    margin-left: 70px;
+    margin-top: 48px;
+    margin-left: 65px;
+  }
+
+  &:before {
+    content: url(assets/triangle.svg);
+    width: 80px;
+    padding-left: 5px;
+    position: absolute;	
+    z-index: -1;
   }
 }

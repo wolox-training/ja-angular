@@ -2,32 +2,48 @@
   display: flex;
   flex-wrap: wrap;
   margin: 50px 0;
-  padding: 0 75px;
+  padding: 20px 75px;
 
   .tech {
     align-items: center;
+    position: relative;
     border-radius: 6px;
-    box-shadow: -8px -8px 0 0 $white, -8px -8px 0 1px $green;
     display: flex;
-    justify-content: space-between;
     background-color: $green;
     flex-direction: column;
-    height: 300px;
     margin: 15px;
     padding: 10px;
-    width: 200px;
-    transition: box-shadow 0.5s ease;
+    width: 200px;   
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      border: 1px solid $green;
+      height: 100%;
+      width: 100%;
+      border-radius: 6px;
+      z-index: -1;
+      transition: 0.5s top ease, 0.5s left ease;
+    }
 
     &:hover {
-      box-shadow: 8px 8px 0 0 $white, 8px 8px 0 1px $green;
+
+      &::before {
+        top: 10px;
+        left: 10px;
+      }      
     }
   
     .logo {
       height: 100px;
       width: 100px;
+      margin-bottom: 10px;
     }
   
     .release {
+      margin: 10px 0;
       font-weight: bold;
     }
   
