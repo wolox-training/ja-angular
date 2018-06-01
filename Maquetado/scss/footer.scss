@@ -1,0 +1,26 @@
+.footer {
+  background-color: $blue;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  padding: 30px 30px 10px;
+  width: 100%;
+
+  .footer-text {
+    font-size: 24px;
+    text-align: center;
+    color: $white;
+    margin-bottom: 20px;
+  }
+
+  .footer-img {
+    margin-bottom: 10px;
+  }
+
+  .copyright {
+    color: $white;
+    font-size: 12px;
+    align-self: flex-end;
+  }
+}
