@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { UserCretionForm } from '../screens/sign-up/sign-up.component';
 import { Form } from '@angular/forms';
 
@@ -8,15 +8,17 @@ import { Form } from '@angular/forms';
 })
 export class UserServiceService {
 
-  readonly root_url = 'http://private-anon-80b0b54ecb-wbooksapi.apiary-mock.com/api/v1/users';
+  readonly root_url = 'https://wbooks-api-stage.herokuapp.com/api/v1/users';
 
-  constructor(private htpp: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   createUser(user: UserCretionForm) {
-    let json = JSON.stringify(user);
-    console.log(json);
 
-    let response = this.htpp.post(this.root_url, json)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    let response = this.http.post(this.root_url, user, {headers: headers})
     .subscribe(user => console.log("success"));
   }
 }
