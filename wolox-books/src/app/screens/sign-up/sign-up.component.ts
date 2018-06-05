@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/User.model';
+
 @Component({
   selector: 'sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,7 +13,7 @@ export class SignUpComponent implements OnInit {
 
   rForm: FormGroup;
 
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb: FormBuilder, private userService: UserService) { 
 
     this.rForm = fb.group({
       'firstName': [],
@@ -24,6 +27,9 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    console.log({user: {...this.rForm.value, password_confirmation: this.rForm.value.password, locale: "en"}});
+    let user = new User(this.rForm.value);
+
+    this.userService.createUser(user);
   }
+
 }
