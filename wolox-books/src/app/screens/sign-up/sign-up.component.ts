@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { UserServiceService } from '../../services/user-service.service';
+import { User } from '../../models/User.model';
 
 @Component({
   selector: 'sign-up',
@@ -26,6 +27,8 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    console.log({user: {...this.rForm.value, password_confirmation: this.rForm.value.password, locale: "en"}});
+    let user = new User(this.rForm.controls.firstName.value, this.rForm.controls.lastName.value, this.rForm.controls.email.value, this.rForm.controls.password.value);
+    this.userService.createUser(user);
   }
+
 }

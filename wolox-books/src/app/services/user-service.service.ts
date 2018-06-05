@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { UserCretionForm } from '../screens/sign-up/sign-up.component';
+import { User } from '../models/User.model';
 import { Form } from '@angular/forms';
 
 @Injectable({
@@ -12,13 +12,13 @@ export class UserServiceService {
 
   constructor(private http: HttpClient) {}
 
-  createUser(user: UserCretionForm) {
+  createUser(user: User) {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
-    let response = this.http.post(this.root_url, user, {headers: headers})
+    let response = this.http.post(this.root_url, {user: user }, {headers: headers})
     .subscribe(user => console.log("success"));
   }
 }
