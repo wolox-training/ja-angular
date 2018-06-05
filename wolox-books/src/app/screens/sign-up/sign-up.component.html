@@ -1,36 +1,23 @@
 <div class="content">
-  <div class="header">
-    <img class="wolox-logo" src="/assets/wolox_logo.svg" alt="wolox-logo">
-    <h4 class="title">
-      BOOKS
-    </h4>
-  </div>
-  <form class="form" [formGroup]="rForm">
-    <div class="form-input">
-      <span class="text">
-        First name
-      </span>
-      <input class="input" type="text" formControlName="firstName">
-    </div>
-    <div class="form-input">
-      <span class="text">
-        Last name
-      </span>
-      <input class="input" type="text" formControlName="lastName">
-    </div>
-    <div class="form-input">
-      <span class="text">
-        Email
-      </span>
-      <input class="input" type="text" formControlName="email">
-    </div>
-    <div class="form-input">
-      <span class="text">
-        Password
-      </span>
-      <input class="input" type="password" formControlName="password">
-    </div>
-    <button class="button primary-button" (click)="signUp()">Sign up</button>
+  <img class="wolox-logo" src="/assets/wolox_books_logo.png" alt="wolox-logo">
+  <form class="form" [formGroup]="rForm" (ngSubmit)="signUp()">
+    <label class="text">
+      First name
+    </label>
+    <input class="input" type="text" formControlName="firstName">
+    <label class="text">
+      Last name
+    </label>
+    <input class="input" type="text" formControlName="lastName">
+    <label class="text">
+      Email
+    </label>
+    <input class="input" type="text" formControlName="email">
+    <label class="text">
+      Password
+    </label>
+    <input class="input" type="text" formControlName="password">
+    <button type="submit" class="button primary-button">Sign up</button>
   </form>
-  <button class="button secondary-button" (click)="goToLogin()">Login</button>
+  <button type="button" class="button secondary-button" (click)="goToLogin()">Login</button>
 </div>

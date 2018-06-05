@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { UserServiceService } from '../../services/user-service.service';
 import { Router, Route } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/User.model';
 
 @Component({
   selector: 'sign-up',
@@ -13,7 +14,7 @@ export class SignUpComponent implements OnInit {
 
   rForm: FormGroup;
 
-  constructor(private fb:FormBuilder, private userService: UserServiceService, private router: Router) { 
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { 
 
     this.rForm = fb.group({
       'firstName': [],
@@ -27,39 +28,12 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    let form = new UserCretionForm(this.rForm.controls.firstName.value, this.rForm.controls.lastName.value, this.rForm.controls.email.value, this.rForm.controls.password.value);
-    this.userService.createUser(form);
+    let user = new User(this.rForm.value);
+    this.userService.createUser(user);
   }
 
   goToLogin() {
     this.router.navigate(['login']);
   }
 
-}
-
-export class UserCretionForm {
-  user: UserCreation;
-
-
-  constructor(firstName, lastName, email, password) {
-    this.user = new UserCreation(firstName, lastName, email, password);
-  }
-}
-
-class UserCreation {
-  first_name: string;
-  last_name: string;
-  email: string;
-  password: string;
-  password_confirmation: string;
-  locale: string;
-
-  constructor(firstName, lastName, email, password) {
-    this.first_name = firstName;
-    this.last_name = lastName;
-    this.email = email;
-    this.password = password;
-    this.password_confirmation = password;
-    this.locale = "en";
-  }
 }
