@@ -6,7 +6,7 @@ import { Form } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class UserServiceService {
+export class UserService {
 
   readonly root_url = 'https://wbooks-api-stage.herokuapp.com/api/v1/users';
 

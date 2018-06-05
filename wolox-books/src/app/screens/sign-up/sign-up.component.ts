@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { UserServiceService } from '../../services/user-service.service';
+import { UserService } from '../../services/user.service';
 import { User } from '../../models/User.model';
 
 @Component({
@@ -13,7 +13,7 @@ export class SignUpComponent implements OnInit {
 
   rForm: FormGroup;
 
-  constructor(private fb:FormBuilder, private userService: UserServiceService) { 
+  constructor(private fb: FormBuilder, private userService: UserService) { 
 
     this.rForm = fb.group({
       'firstName': [],
@@ -27,7 +27,9 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    let user = new User(this.rForm.controls.firstName.value, this.rForm.controls.lastName.value, this.rForm.controls.email.value, this.rForm.controls.password.value);
+    console.log(this.rForm.value);
+    let user = new User(this.rForm.value);
+
     this.userService.createUser(user);
   }
 

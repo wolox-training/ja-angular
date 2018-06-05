@@ -6,12 +6,12 @@ export class User {
   password_confirmation: string;
   locale: string;
 
-  constructor(firstName, lastName, email, password) {
-    this.first_name = firstName;
-    this.last_name = lastName;
-    this.email = email;
-    this.password = password;
-    this.password_confirmation = password;
+  constructor(signUpForm) {
+    this.first_name = signUpForm.firstName;
+    this.last_name = signUpForm.lastName;
+    this.email = signUpForm.email;
+    this.password = signUpForm.password;
+    this.password_confirmation = signUpForm.password;
     this.locale = "en";
   }
 }
