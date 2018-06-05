@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { UserServiceService } from '../../services/user-service.service';
+import { Router, Route } from '@angular/router';
 
 @Component({
   selector: 'sign-up',
@@ -12,7 +13,7 @@ export class SignUpComponent implements OnInit {
 
   rForm: FormGroup;
 
-  constructor(private fb:FormBuilder, private userService: UserServiceService) { 
+  constructor(private fb:FormBuilder, private userService: UserServiceService, private router: Router) { 
 
     this.rForm = fb.group({
       'firstName': [],
@@ -28,6 +29,10 @@ export class SignUpComponent implements OnInit {
   signUp() {
     let form = new UserCretionForm(this.rForm.controls.firstName.value, this.rForm.controls.lastName.value, this.rForm.controls.email.value, this.rForm.controls.password.value);
     this.userService.createUser(form);
+  }
+
+  goToLogin() {
+    this.router.navigate(['login']);
   }
 
 }
