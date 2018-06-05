@@ -26,35 +26,6 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    let form = new UserCretionForm(this.rForm.controls.firstName.value, this.rForm.controls.lastName.value, this.rForm.controls.email.value, this.rForm.controls.password.value);
-    this.userService.createUser(form);
-  }
-
-}
-
-export class UserCretionForm {
-  user: UserCreation;
-
-
-  constructor(firstName, lastName, email, password) {
-    this.user = new UserCreation(firstName, lastName, email, password);
-  }
-}
-
-class UserCreation {
-  first_name: string;
-  last_name: string;
-  email: string;
-  password: string;
-  password_confirmation: string;
-  locale: string;
-
-  constructor(firstName, lastName, email, password) {
-    this.first_name = firstName;
-    this.last_name = lastName;
-    this.email = email;
-    this.password = password;
-    this.password_confirmation = password;
-    this.locale = "en";
+    console.log({user: {...this.rForm.value, password_confirmation: this.rForm.value.password, locale: "en"}});
   }
 }
