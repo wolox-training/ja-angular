@@ -24,6 +24,6 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    console.log({user:this.rForm.value, password_confirmation: this.rForm.value.password, locale: "en"});
+    console.log({user: {...this.rForm.value, password_confirmation: this.rForm.value.password, locale: "en"}});
   }
 }
