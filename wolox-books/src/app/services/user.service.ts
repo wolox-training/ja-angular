@@ -36,9 +36,7 @@ export class UserService {
     let response = this.http.post(url, {session: login }, {headers: headers})
       .subscribe(function (token) {
         service.localStorageService.setValue('token', (<any>token).access_token);
-        service.router.navigate(['auth']);
+        service.router.navigate(['books']);
       });
   }
-
-  
 }
