@@ -7,12 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './screens/sign-up/sign-up.component';
 import { LogInComponent } from './screens/log-in/log-in.component';
+import { AuthComponent } from './screens/auth/auth.component';
+import { LocalStorageService } from './services/local-storage.service'
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
-    LogInComponent
+    LogInComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,9 @@ import { LogInComponent } from './screens/log-in/log-in.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LocalStorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
