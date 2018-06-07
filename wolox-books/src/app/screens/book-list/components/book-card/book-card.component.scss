@@ -1,0 +1,25 @@
+@import './src/scss/colors';
+
+.card {
+  background-color: $white;
+  width: 250px;
+  height: 322px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 8px 8px 6px -6px $alto;
+  margin: 7px;
+
+  .image {
+    align-self: center;
+    height: 200px;
+    width: 200px;
+    background-color: $lightgrey;
+  }
+
+  .title {
+    font-size: 17px;
+    margin: 15px 0;
+    font-weight: bold;
+  }
+}

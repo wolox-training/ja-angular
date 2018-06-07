@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from  '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule, COMPOSITION_BUFFER_MODE } from  '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { LocalStorageService } from './services/local-storage.service';
 import { BookListComponent } from './screens/book-list/book-list.component';
 import { UnauthComponent } from './screens/unauth/unauth.component'
 import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { CommonModule } from '@angular/common';
+import { BookCardComponent } from './screens/book-list/components/book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -20,18 +23,25 @@ import { AuthGuard } from './auth.guard';
     LogInComponent,
     AuthComponent,
     BookListComponent,
-    UnauthComponent
+    UnauthComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [
     LocalStorageService,
-    AuthGuard
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
