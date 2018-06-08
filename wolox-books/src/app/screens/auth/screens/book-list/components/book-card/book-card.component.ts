@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'book-card',
@@ -7,5 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BookCardComponent{
 
+  constructor(private router: Router) {}
+
   @Input() book: any;
+
+  goToBook() {
+    this.router.navigate([`books/${ this.book.id }`]);
+  }
+  
 }
