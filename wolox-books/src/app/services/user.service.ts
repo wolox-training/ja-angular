@@ -24,21 +24,19 @@ export class UserService {
       .subscribe(a => this.router.navigate(['login']));
   }
 
-  logIn(login) {
+  login(login) {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
     
-    const url = this.root_url + '/sessions';
+    const url = `${this.root_url}/sessions`;
     let service = this;
 
-    let response = this.http.post(url, {session: login }, {headers: headers})
+    let response = this.http.post(url, { session: login }, { headers })
       .subscribe(function (token) {
         service.localStorageService.setValue('token', (<any>token).access_token);
         service.router.navigate(['auth']);
       });
   }
-
-  
 }
