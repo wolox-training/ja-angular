@@ -23,15 +23,15 @@ export class UserService {
       .subscribe(a => this.Router.navigate(['login']));
   }
 
-  logIn(login) {
+  login(login) {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
     
-    const url = this.root_url + '/sessions';
+    const url = `${this.root_url}/sessions`;
 
-    let response = this.http.post(url, {session: login }, {headers: headers})
+    let response = this.http.post(url, { session: login }, { headers })
       .subscribe(token => console.log(token));
   }
 }
