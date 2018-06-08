@@ -3,7 +3,7 @@
 .card {
   background-color: $white;
   width: 250px;
-  height: 322px;
+  min-height: 322px;
   padding: 25px;
   display: flex;
   flex-direction: column;
