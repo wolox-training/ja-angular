@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BookService } from '../../services/book.service';
-import { Book } from '../../models/Book.model';
+import { BookService } from '../../../../services/book.service';
 import { CommonModule } from '@angular/common';
 import { BookCardComponent } from './components/book-card/book-card.component';
 
