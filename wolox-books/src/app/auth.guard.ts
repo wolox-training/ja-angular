@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
   constructor(private localStorageService: LocalStorageService, private router: Router) {}
 
   canActivate() {
-    if(this.localStorageService.getValue('token') != null)
+    if(this.localStorageService.getValue(this.localStorageService.SESSION_TOKEN) != null)
       return true;
     else {
       this.router.navigate(['login']);
