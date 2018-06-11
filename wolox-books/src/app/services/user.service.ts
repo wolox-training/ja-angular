@@ -12,7 +12,11 @@ export class UserService {
 
   readonly root_url = 'https://wbooks-api-stage.herokuapp.com/api/v1/users';
 
-  constructor(private http: HttpClient, private router: Router, private localStorageService: LocalStorageService) {}
+  constructor(
+     private http: HttpClient, 
+     private router: Router, 
+     private localStorageService: LocalStorageService
+    ) {}
 
   createUser(user: User) {
 
@@ -35,7 +39,7 @@ export class UserService {
 
     let response = this.http.post(url, { session: login }, { headers })
       .subscribe(function (token) {
-        service.localStorageService.setValue('token', (<any>token).access_token);
+        service.localStorageService.setValue(service.localStorageService.SESSION_TOKEN , (<any>token).access_token);
         service.router.navigate(['auth']);
       });
   }
