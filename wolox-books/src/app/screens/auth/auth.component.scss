@@ -1,0 +1,16 @@
+@import './src/scss/colors';
+
+.navbar {
+  border-top: 5px solid $blue;
+  width: 100%;
+  box-shadow: 0 10px 6px -6px $grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+
+  .logout {
+    font-weight: bold;
+    font-size: 15px;
+  }
+}
