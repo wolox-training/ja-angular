@@ -1,11 +1,12 @@
 @import './src/scss/colors';
 
 .book-detail {
-  min-width: 400px;
+  min-width: 700px;
   background-color: $white;
   padding: 20px;
   display: flex;
   box-shadow: 8px 8px 6px -6px $alto;
+  width: fit-content;
 
   .image {
     height: 200px;
