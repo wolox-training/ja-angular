@@ -35,12 +35,11 @@ export class UserService {
     });
     
     const url = `${this.root_url}/sessions`;
-    let service = this;
-
+    
     let response = this.http.post(url, { session: login }, { headers })
-      .subscribe(function (token) {
-        service.localStorageService.setValue(service.localStorageService.SESSION_TOKEN , (<any>token).access_token);
-        service.router.navigate(['auth']);
+      .subscribe((token) => {
+        this.localStorageService.setValue(this.localStorageService.SESSION_TOKEN , (<any>token).access_token);
+        this.router.navigate(['auth']);
       });
   }
 }
