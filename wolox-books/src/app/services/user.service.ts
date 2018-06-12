@@ -33,13 +33,11 @@ export class UserService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    
-    const url = `${this.root_url}/sessions`;
-    
-    let response = this.http.post(url, { session: login }, { headers })
+
+    let response = this.http.post(`${this.root_url}/sessions`, { session: login }, { headers })
       .subscribe((token) => {
         this.localStorageService.setValue(this.localStorageService.SESSION_TOKEN , (<any>token).access_token);
-        this.router.navigate(['auth']);
+        this.router.navigate(['books']);
       });
   }
 }
