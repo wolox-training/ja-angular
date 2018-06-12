@@ -7,12 +7,15 @@ import { LocalStorageService } from './services/local-storage.service';
 })
 export class UnauthGuard implements CanActivate {
 
-  constructor(private localStorageService: LocalStorageService, private router: Router) {}
+  constructor(
+    private localStorageService: LocalStorageService, 
+    private router: Router
+  ) {}
 
   canActivate() {
-    if(this.localStorageService.getValue(this.localStorageService.SESSION_TOKEN) == null)
+    if(this.localStorageService.getValue(this.localStorageService.SESSION_TOKEN) == null) {
       return true;
-    else {
+    } else {
       this.router.navigate(['books']);
       return false;
     }    
