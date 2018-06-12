@@ -13,7 +13,7 @@ export class UnauthGuard implements CanActivate {
   ) {}
 
   canActivate() {
-    if(this.localStorageService.getValue(this.localStorageService.SESSION_TOKEN) == null) {
+    if (this.localStorageService.getValue(this.localStorageService.SESSION_TOKEN) == null) {
       return true;
     } else {
       this.router.navigate(['books']);
