@@ -1,7 +1,7 @@
 <div class="main-container">
   <nav class="navbar">
-    <img class="wolox-logo" src="/assets/wolox_books_logo.png" alt="wolox-logo">
+    <img class="wolox-logo" src="/assets/wolox_books_logo.png" alt="wolox-logo" (click)="goToBooks()">
     <button class="logout" (click)="logOut()">Logout</button>
   </nav>
-  <router-outlet></router-outlet>
+  <router-outlet class="container"></router-outlet>
 </div>
