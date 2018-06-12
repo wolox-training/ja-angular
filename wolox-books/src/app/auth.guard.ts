@@ -7,15 +7,17 @@ import { LocalStorageService } from './services/local-storage.service';
 })
 export class AuthGuard implements CanActivate {
   
-  constructor(private localStorageService: LocalStorageService, private router: Router) {}
+  constructor(
+    private localStorageService: LocalStorageService, 
+    private router: Router
+  ) {}
 
   canActivate() {
-    if(this.localStorageService.getValue('token') != null)
+    if (this.localStorageService.getValue(this.localStorageService.SESSION_TOKEN) != null) {
       return true;
-    else {
+    } else {
       this.router.navigate(['login']);
       return false;
     }    
   }
 }
- 
