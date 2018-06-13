@@ -1,16 +1,26 @@
 @import './src/scss/colors';
 
-.navbar {
-  border-top: 5px solid $blue;
-  width: 100%;
-  box-shadow: 0 10px 6px -6px $grey;
+.main-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 15px;
+  flex-direction: column;
+  
+  .navbar {
+    border-top: 5px solid $blue;
+    background-color: $white;
+    width: 100%;
+    box-shadow: 0 10px 6px -6px $alto;
+    padding: 5px 15px;
+    position: fixed;
 
-  .logout {
-    font-weight: bold;
-    font-size: 15px;
+    .navbar-interior {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logout {
+      font-weight: bold;
+      font-size: 15px;
+    }
   }
 }
