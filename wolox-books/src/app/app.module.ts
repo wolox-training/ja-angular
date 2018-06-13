@@ -43,10 +43,6 @@ import { BookDetailComponent } from './screens/auth/screens/book-detail/book-det
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
-    },
-    { 
-      provide: LOCALE_ID, 
-      useValue: 'de' 
     }
   ],
   bootstrap: [AppComponent]

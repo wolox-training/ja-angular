@@ -48,6 +48,13 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "de": {
+              "aot": true,
+              "outputPath": "dist/wolox-books-de/",
+              "i18nFile": "src/locale/messages.de.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "de"
             }
           }
         },
@@ -59,6 +66,9 @@
           "configurations": {
             "production": {
               "browserTarget": "wolox-books:build:production"
+            },
+            "de": {
+              "browserTarget": "wolox-books:build:de"
             }
           }
         },
