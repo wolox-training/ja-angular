@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'book-card',
@@ -6,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./book-card.component.scss']
 })
 export class BookCardComponent{
+
+  constructor(private router: Router) {}
 
   @Input() book: any;
 }

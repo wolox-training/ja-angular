@@ -15,6 +15,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { CommonModule } from '@angular/common';
 import { BookCardComponent } from './screens/auth/screens/book-list/components/book-card/book-card.component';
+import { BookDetailComponent } from './screens/auth/screens/book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BookCardComponent } from './screens/auth/screens/book-list/components/b
     AuthComponent,
     BookListComponent,
     UnauthComponent,
-    BookCardComponent
+    BookCardComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
