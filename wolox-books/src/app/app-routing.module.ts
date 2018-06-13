@@ -12,6 +12,7 @@ import { BookDetailComponent } from './screens/auth/screens/book-detail/book-det
 const routes: Routes = [
   {
     path: '',
+    component: UnauthComponent,
     canActivate: [UnauthGuard],
     children: [
       {

@@ -3,13 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 100px;
 
   .book-detail {
     min-width: 800px;
     background-color: $white;
     padding: 20px;
     display: flex;
-    margin-top: 50px;
     box-shadow: 8px 8px 6px -6px $alto;
     width: fit-content;
 
