@@ -11,9 +11,4 @@ export class BookCardComponent{
   constructor(private router: Router) {}
 
   @Input() book: any;
-
-  goToBook() {
-    this.router.navigate([`books/${ this.book.id }`]);
-  }
-  
 }

@@ -1,5 +1,5 @@
-<div class="card" (click)="goToBook()">
+<a class="card" [routerLink]="[book.id]">
   <img class="image" src={{book.image_url}} alt="">
   <h3 class="title">{{book.title}}</h3>
   <span class="author">{{book.author}}</span>
-</div>
+</a>

@@ -1,5 +1,5 @@
 <div class="book-detail-container">
-  <div *ngIf="book | async; let book;" class="book-detail">
+<div *ngIf="book | async as book;" class="book-detail">  
     <img class="image" src={{book.image_url}} alt="book cover">
     <div class="info">
       <div class="header">

@@ -22,8 +22,4 @@ export class AuthComponent implements OnInit {
     this.localStorageService.removeValue(this.localStorageService.SESSION_TOKEN);
     this.router.navigate(['login']);
   }
-
-  goToBooks() {
-    this.router.navigate(['books']);
-  }
 }
