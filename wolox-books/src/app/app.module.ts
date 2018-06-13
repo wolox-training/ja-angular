@@ -44,7 +44,10 @@ import { BookDetailComponent } from './screens/auth/screens/book-detail/book-det
       useClass: TokenInterceptorService,
       multi: true
     },
-    { provide: LOCALE_ID, useValue: 'de' }
+    { 
+      provide: LOCALE_ID, 
+      useValue: 'de' 
+    }
   ],
   bootstrap: [AppComponent]
 })

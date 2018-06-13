@@ -2,29 +2,26 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="55522227579fd654b60fc323afb9399368d7b7b9" datatype="html">
+      <trans-unit id="book-detail-author" datatype="html">
         <source>Autor del libro:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/screens/auth/screens/book-detail/book-detail.component.ts</context>
           <context context-type="linenumber">10</context>
         </context-group>
-        <note priority="1" from="description">book-detail-author</note>
       </trans-unit>
-      <trans-unit id="50c8614e030fc2b39f1c57d4aef87f929687df66" datatype="html">
+      <trans-unit id="book-detail-publisher" datatype="html">
         <source>Editorial:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/screens/auth/screens/book-detail/book-detail.component.ts</context>
           <context context-type="linenumber">14</context>
         </context-group>
-        <note priority="1" from="description">book-detail-publisher</note>
       </trans-unit>
-      <trans-unit id="a0239c954785c03c185f774bbcff86cef5d9d3a2" datatype="html">
+      <trans-unit id="book-detail-year" datatype="html">
         <source>Año de publicacion:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/screens/auth/screens/book-detail/book-detail.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
-        <note priority="1" from="description">book-detail-year</note>
       </trans-unit>
     </body>
   </file>
