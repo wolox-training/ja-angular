@@ -14,7 +14,11 @@ export class LogInComponent implements OnInit {
 
   rForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { 
+  constructor(
+    private fb: FormBuilder, 
+    private userService: UserService, 
+    private router: Router
+  ) { 
 
     this.rForm = fb.group({
       'email': [],
@@ -26,7 +30,7 @@ export class LogInComponent implements OnInit {
   }
 
   login() {
-    this.userService.logIn(this.rForm.value);
+    this.userService.login(this.rForm.value);
   }
 
   goToSignUp() {

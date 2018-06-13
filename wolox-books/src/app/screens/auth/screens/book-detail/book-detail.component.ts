@@ -11,12 +11,13 @@ export class BookDetailComponent implements OnInit {
   book: any;
   bookId: number;
 
-  constructor(private bookService: BookService, private route: ActivatedRoute) { }
+  constructor(
+    private bookService: BookService, 
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => this.bookId = params.id);
     this.book = this.bookService.getBook(this.bookId);
-    //this.bookService.getBook(this.bookId).subscribe(book => this.book = book);
   }
-
 }

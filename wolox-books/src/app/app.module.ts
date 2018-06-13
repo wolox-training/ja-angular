@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, COMPOSITION_BUFFER_MODE } from  '@angular/forms';
+=======
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from  '@angular/forms';
+>>>>>>> master
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';

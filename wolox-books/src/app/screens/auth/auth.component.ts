@@ -10,17 +10,16 @@ import { LocalStorageService } from '../../services/local-storage.service';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private localStorageService: LocalStorageService, private router: Router) { }
+  constructor(
+    private localStorageService: LocalStorageService, 
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
   logOut() {
-    this.localStorageService.removeValue('token');
+    this.localStorageService.removeValue(this.localStorageService.SESSION_TOKEN);
     this.router.navigate(['login']);
-  }
-
-  goToBooks() {
-    this.router.navigate(['books']);
   }
 }
