@@ -6,45 +6,57 @@
       form.content
         div.form-item
           span.name First name
-          input.input(v-model="firstName")
+          input.input(v-model.trim="firstName")
         div.form-item
           span.name Last name
           input.input(v-model="lastName")
         div.form-item
-          span.name Email
-          input.input(v-model="email")
+          span.name(:class="{error: $v.email.$error}") Email
+          input.input(v-model="$v.email.$model")
+          span.error-label(v-if="!$v.email.required && $v.email.$dirty") El campo es requerido
         div.form-item
-          span.name Password
-          input.input(v-model="password")
+          span.name(:class="{error: $v.password.$error}") Password
+          input.input(v-model.trim="$v.password.$model")
+          span.error-label(v-if="!$v.password.required && $v.password.$dirty") El campo es requerido
         button.btn.primary.full-width.m-bottom-2(@click="logInfo") Sign Up
       button.btn.secondary.full-width.m-top-2 Log In
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators'
+
 export default {
   data: () => {
     return {
-      firstName: null,
-      lastName: null,
-      email: null,
-      password: null
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: ''
     }
   },
   methods: {
 
     logInfo () {
-      const data =
-      {
-        user: {
-          first_name: this.firstName,
-          last_name: this.lastName,
-          email: this.email,
-          password: this.password
-        }
+      this.$v.$touch()
+
+      if (!this.$v.$invalid) {
+        const data =
+          {
+            user: {
+              first_name: this.firstName,
+              last_name: this.lastName,
+              email: this.email,
+              password: this.password
+            }
+          }
+        console.log(data)
       }
-      console.log(data)
     }
 
+  },
+  validations: {
+    email: { required },
+    password: { required }
   }
 }
 </script>

@@ -1,3 +1,5 @@
+$error-color: $guardsman-red;
+
 .form-item {
   display: flex;
   flex-direction: column;
@@ -7,6 +9,16 @@
     margin-left: 12px;
     margin-bottom: 6px;
     font-weight: bold;
+
+    &.error {
+      color: $error-color;
+    }
+  }
+
+  .error-label {
+    margin-top: 3px;
+    margin-left: 12px;
+    color: $error-color;
   }
 }
 
