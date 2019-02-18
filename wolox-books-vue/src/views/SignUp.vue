@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  data: () => { 
+  data: () => {
     return {
       firstName: null,
       lastName: null,
@@ -32,8 +32,8 @@ export default {
   },
   methods: {
 
-    logInfo() {
-      const data = 
+    logInfo () {
+      const data =
       {
         user: {
           first_name: this.firstName,
@@ -41,14 +41,13 @@ export default {
           email: this.email,
           password: this.password
         }
-      };
-      console.log(data);
+      }
+      console.log(data)
     }
 
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import '../scss/colors.scss';
