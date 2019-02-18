@@ -1,0 +1,85 @@
+<template lang="pug">
+  div.container.column.center.middle
+    div.form.column.center.middle
+      img.logo(src='../../src/assets/wolox-logo.png')
+      h2.title books
+      form.content
+        div.form-item
+          span.name First name
+          input.input(v-model="firstName")
+        div.form-item
+          span.name Last name
+          input.input(v-model="lastName")
+        div.form-item
+          span.name Email
+          input.input(v-model="email")
+        div.form-item
+          span.name Password
+          input.input(v-model="password")
+        button.btn.primary.full-width.m-bottom-2(@click="logInfo") Sign Up
+      button.btn.secondary.full-width.m-top-2 Log In
+</template>
+
+<script>
+export default {
+  data: () => { 
+    return {
+      firstName: null,
+      lastName: null,
+      email: null,
+      password: null
+    }
+  },
+  methods: {
+
+    logInfo() {
+      const data = 
+      {
+        user: {
+          first_name: this.firstName,
+          last_name: this.lastName,
+          email: this.email,
+          password: this.password
+        }
+      };
+      console.log(data);
+    }
+
+  }
+}
+</script>
+
+
+<style lang="scss" scoped>
+@import '../scss/colors.scss';
+
+  .container {
+    min-height: 100vh;
+  }
+
+  .form {
+    width: 370px;
+    background-color: $wild-sand;
+    padding: 20px;
+    border-top: 4px solid $celurean;
+  }
+
+  .logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 15px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  .content {
+    width: 100%;
+    border-bottom: 2px solid $alto;
+  }
+
+</style>

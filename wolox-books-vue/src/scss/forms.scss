@@ -1,0 +1,17 @@
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  .name {
+    margin-left: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+}
+
+.input {
+  border-radius: 5px;
+  height: 35px;
+  padding: 0 5px;
+}
