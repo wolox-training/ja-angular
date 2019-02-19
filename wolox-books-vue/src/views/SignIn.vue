@@ -16,8 +16,10 @@
 
 <script>
 import { UserService } from '../services/userService'
+import { LocalStorageService } from '../services/localStorageService'
 
 const userService = new UserService()
+const localStorageService = new LocalStorageService()
 
 export default {
   data: () => {
@@ -30,7 +32,12 @@ export default {
 
     signIn () {
       userService.signIn(this.email, this.password)
-        .then(response => console.log(response.data.access_token))
+        .then(response => {
+          if (response.ok) {
+            localStorageService.setValue(localStorageService.SESSION_TOKEN, response.data.access_token)
+            this.$router.push({ name: 'home' })
+          }
+        })
     },
 
     goToSignUp () {
