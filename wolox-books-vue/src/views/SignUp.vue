@@ -1,7 +1,7 @@
 <template lang="pug">
   div.container.column.center.middle
     div.form.column.center.middle
-      img.logo(src='../../src/assets/wolox-logo.png')
+      img.logo(src='../assets/wolox-logo.png')
       h2.title books
       form.content
         div.form-item
@@ -24,6 +24,9 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import { UserService } from '../services/userService'
+
+const userService = new UserService()
 
 export default {
   data: () => {
@@ -46,10 +49,13 @@ export default {
               first_name: this.firstName,
               last_name: this.lastName,
               email: this.email,
-              password: this.password
+              password: this.password,
+              password_confirmation: this.password,
+              locale: "en"
             }
           }
-        console.log(data)
+        userService.createUser(data)
+          .then(res => console.log(res))
       }
     }
 
