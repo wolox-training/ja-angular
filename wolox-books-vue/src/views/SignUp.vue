@@ -19,7 +19,7 @@
           input.input(v-model.trim="$v.password.$model")
           span.error-label(v-if="!$v.password.required && $v.password.$dirty") El campo es requerido
         button.btn.primary.full-width.m-bottom-2(@click="logInfo") Sign Up
-      button.btn.secondary.full-width.m-top-2 Log In
+      button.btn.secondary.full-width.m-top-2(@click="goToSignIn") Log In
 </template>
 
 <script>
@@ -51,12 +51,20 @@ export default {
               email: this.email,
               password: this.password,
               password_confirmation: this.password,
-              locale: "en"
+              locale: 'en'
             }
           }
         userService.createUser(data)
-          .then(res => console.log(res))
+          .then(response => {
+            if (response.ok) {
+              this.$router.push({ name: 'signIn' })
+            }
+          })
       }
+    },
+
+    goToSignIn () {
+      this.$router.push({ name: 'signIn' })
     }
 
   },
