@@ -1,7 +1,7 @@
 <template lang="pug">
   div.container.column.center.middle
     div.form.column.center.middle
-      img.logo(src='../assets/wolox-logo.png')
+      img.logo(src='../assets/wolox-logo.png' alt="wolox-logo")
       h2.title books
       form.content
         div.form-item
