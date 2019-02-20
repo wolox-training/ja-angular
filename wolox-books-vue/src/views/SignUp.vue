@@ -19,14 +19,14 @@
           input.input(v-model.trim="$v.password.$model")
           span.error-label(v-if="!$v.password.required && $v.password.$dirty") El campo es requerido
         button.btn.primary.full-width.m-bottom-2(@click="logInfo") Sign Up
-      button.btn.secondary.full-width.m-top-2 Log In
+      router-link.btn.secondary.full-width.m-top-2(to="") Log In
 </template>
 
 <script>
 import { required } from 'vuelidate/lib/validators'
 
 export default {
-  data: () => {
+  data () {
     return {
       firstName: '',
       lastName: '',
@@ -35,7 +35,6 @@ export default {
     }
   },
   methods: {
-
     logInfo () {
       this.$v.$touch()
 
@@ -62,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/colors.scss';
+@import '../scss/colors';
 
   .container {
     min-height: 100vh;
@@ -92,5 +91,4 @@ export default {
     width: 100%;
     border-bottom: 2px solid $alto;
   }
-
 </style>
