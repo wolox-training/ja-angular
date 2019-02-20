@@ -14,4 +14,8 @@ export class BooksService {
   getBooks () {
     return this.api.get()
   }
+
+  getBook (bookId) {
+    return this.api.get(`/${bookId}`)
+  }
 }

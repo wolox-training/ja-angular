@@ -4,6 +4,7 @@ import SignUp from './views/SignUp.vue'
 import SignIn from './views/SignIn.vue'
 import Auth from './views/auth/Auth.vue'
 import BookList from './views/auth/screens/bookList/BookList.vue'
+import BookDetail from './views/auth/screens/bookDetail/BookDetail.vue'
 
 Vue.use(Router)
 
@@ -16,9 +17,14 @@ export default new Router({
       component: Auth,
       children: [
         {
-          path: 'books',
+          path: '/books',
           name: 'bookList',
           component: BookList
+        },
+        {
+          path: '/books/:id',
+          name: 'bookDetail',
+          component: BookDetail
         }
       ]
     },
