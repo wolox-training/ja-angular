@@ -6,13 +6,13 @@
         p.title.bold.m-right-1 {{book.title}}
         p.subtitle ({{book.genre}})
       span.m-bottom-2
-        strong.bold.m-right-1 Book author:
+        strong.bold.m-right-1 {{ $t("bookDetail.author")}}:
         | {{book.author}}
       span.m-bottom-2
-        strong.bold.m-right-1 Publisher:
+        strong.bold.m-right-1 {{ $t("bookDetail.publisher")}}:
         | {{book.publisher}}
       span.m-bottom-2
-        strong.bold.m-right-1 Year of publication:
+        strong.bold.m-right-1 {{ $t("bookDetail.year")}}:
         | {{book.year}}
 </template>
 

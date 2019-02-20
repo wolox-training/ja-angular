@@ -5,19 +5,19 @@
       h2.title books
       form.content
         div.form-item
-          span.name First name
+          span.name {{ $t("signUp.firstName")}}
           input.input(v-model.trim="firstName")
         div.form-item
-          span.name Last name
+          span.name {{ $t("signUp.lastName")}}
           input.input(v-model="lastName")
         div.form-item
-          span.name(:class="{error: $v.email.$error}") Email
+          span.name(:class="{error: $v.email.$error}") {{ $t("signUp.email")}}
           input.input(v-model="$v.email.$model")
-          span.error-label(v-if="!$v.email.required && $v.email.$dirty") El campo es requerido
+          span.error-label(v-if="!$v.email.required && $v.email.$dirty") {{ $t("formErrors.required")}}
         div.form-item
-          span.name(:class="{error: $v.password.$error}") Password
+          span.name(:class="{error: $v.password.$error}") {{ $t("signUp.password")}}
           input.input(v-model.trim="$v.password.$model")
-          span.error-label(v-if="!$v.password.required && $v.password.$dirty") El campo es requerido
+          span.error-label(v-if="!$v.password.required && $v.password.$dirty") {{ $t("formErrors.required")}}
         button.btn.primary.full-width.m-bottom-2(@click="logInfo") Sign Up
       button.btn.secondary.full-width.m-top-2(@click="goToSignIn") Log In
 </template>
