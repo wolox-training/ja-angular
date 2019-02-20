@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import SignUp from './views/SignUp.vue'
-import SignIn from './views/SignIn.vue'
-import NavBar from './views/NavBar.vue'
 
 Vue.use(Router)
 
@@ -11,17 +8,17 @@ export default new Router({
     {
       path: '',
       name: 'home',
-      component: NavBar
+      component: () => import(/* webpackChunkName: "sign-up" */ './views/NavBar.vue')
     },
     {
       path: '/signUp',
       name: 'signUp',
-      component: SignUp
+      component: () => import(/* webpackChunkName: "sign-up" */ './views/SignUp.vue')
     },
     {
       path: '/signIn',
       name: 'signIn',
-      component: SignIn
+      component: () => import(/* webpackChunkName: "sign-in" */ './views/SignIn.vue')
     }
   ]
 })
