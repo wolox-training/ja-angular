@@ -1,5 +1,6 @@
 <template lang="pug">
-  p asd
+  p
+    | Sign in view
 </template>
 
 <script>
