@@ -5,19 +5,29 @@
       h2.title books
       form.content
         div.form-item
-          span.name First name
+          span.name(:class="{error: $v.firstName.$error}")
+            | First name
           input.input(v-model.trim="firstName")
+          span.error-label(v-if="!$v.firstName.required && $v.firstName.$dirty")
+            | El campo es requerido
         div.form-item
-          span.name Last name
+          span.name(:class="{error: $v.lastName.$error}")
+            | Last name
           input.input(v-model="lastName")
+          span.error-label(v-if="!$v.lastName.required && $v.lastName.$dirty")
+            | El campo es requerido
         div.form-item
-          span.name(:class="{error: $v.email.$error}") Email
+          span.name(:class="{error: $v.email.$error}")
+            | Email
           input.input(v-model="$v.email.$model")
-          span.error-label(v-if="!$v.email.required && $v.email.$dirty") El campo es requerido
+          span.error-label(v-if="!$v.email.required && $v.email.$dirty")
+            | El campo es requerido
         div.form-item
-          span.name(:class="{error: $v.password.$error}") Password
+          span.name(:class="{error: $v.password.$error}")
+            | Password
           input.input(v-model.trim="$v.password.$model")
-          span.error-label(v-if="!$v.password.required && $v.password.$dirty") El campo es requerido
+          span.error-label(v-if="!$v.password.required && $v.password.$dirty")
+            | El campo es requerido
         button.btn.primary.full-width.m-bottom-2(@click="logInfo") Sign Up
       router-link.btn.secondary.full-width.m-top-2(to="") Log In
 </template>
@@ -55,7 +65,9 @@ export default {
   },
   validations: {
     email: { required },
-    password: { required }
+    password: { required },
+    firstName: { required },
+    lastName: { required }
   }
 }
 </script>
