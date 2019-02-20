@@ -17,12 +17,12 @@
           span.name Password
           input.input(v-model="password")
         button.btn.primary.full-width.m-bottom-2(@click="logInfo") Sign Up
-      button.btn.secondary.full-width.m-top-2 Log In
+      router-link.btn.secondary.full-width.m-top-2(to="") Log In
 </template>
 
 <script>
 export default {
-  data: () => {
+  data () {
     return {
       firstName: null,
       lastName: null,
@@ -31,7 +31,6 @@ export default {
     }
   },
   methods: {
-
     logInfo () {
       const data =
       {
@@ -50,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/colors.scss';
+@import '../scss/colors';
 
   .container {
     min-height: 100vh;
@@ -80,5 +79,4 @@ export default {
     width: 100%;
     border-bottom: 2px solid $alto;
   }
-
 </style>
