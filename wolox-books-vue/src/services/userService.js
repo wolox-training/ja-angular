@@ -15,6 +15,6 @@ export class UserService {
       }
     }
 
-    return this.api.post('sessions', session)
+    return this.api.post('/users/sessions', session)
   }
 }
