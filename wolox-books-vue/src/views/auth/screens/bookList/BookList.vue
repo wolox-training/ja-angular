@@ -4,22 +4,16 @@
 </template>
 
 <script>
-import { BooksService } from '../../../../services/booksService'
 import BookCard from './components/BookCard.vue'
 
-const booksService = new BooksService()
-
 export default {
-  data: () => {
-    return {
-      books: null
+  computed: {
+    books () {
+      return this.$store.state.books
     }
   },
   created: function () {
-    booksService.getBooks()
-      .then(books => {
-        this.books = books.data
-      })
+    this.$store.dispatch('getBooks')
   },
   components: {
     BookCard
