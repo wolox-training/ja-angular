@@ -5,10 +5,10 @@
       h2.title books
       form.content
         .form-item
-          span.name Email
+          span.name {{ $t("signIn.email")}}
           input.input(v-model="email")
         .form-item
-          span.name Password
+          span.name {{ $t("signIn.password")}}
           input.input(v-model="password")
         button.btn.primary.full-width.m-bottom-2(@click="signIn") Log In
       router-link.btn.secondary.full-width.m-top-2(:to="{ name: 'signUp' }") Sign Up

@@ -6,28 +6,28 @@
       form.content(@submit.prevent)
         .form-item
           span.name(:class="{error: $v.firstName.$error}")
-            | First name
+            | {{ $t("signUp.firstName")}}
           input.input(v-model.trim="firstName")
           span.error-label(v-if="!$v.firstName.required && $v.firstName.$dirty")
-            | El campo es requerido
+            | {{ $t("formErrors.required")}}
         .form-item
           span.name(:class="{error: $v.lastName.$error}")
-            | Last name
+            | {{ $t("signUp.lastName")}}
           input.input(v-model="lastName")
           span.error-label(v-if="!$v.lastName.required && $v.lastName.$dirty")
-            | El campo es requerido
+            | {{ $t("formErrors.required")}}
         .form-item
           span.name(:class="{error: $v.email.$error}")
-            | Email
+            | {{ $t("signUp.email")}}
           input.input(v-model="$v.email.$model")
           span.error-label(v-if="!$v.email.required && $v.email.$dirty")
-            | El campo es requerido
+            | {{ $t("formErrors.required")}}
         .form-item
           span.name(:class="{error: $v.password.$error}")
-            | Password
+            | {{ $t("signUp.password")}}
           input.input(v-model.trim="$v.password.$model")
           span.error-label(v-if="!$v.password.required && $v.password.$dirty")
-            | El campo es requerido
+            | {{ $t("formErrors.required")}}
         button.btn.primary.full-width.m-bottom-2(@click="logInfo")
           | Sign Up
       router-link.btn.secondary.full-width.m-top-2(:to="{ name: 'signIn' }")

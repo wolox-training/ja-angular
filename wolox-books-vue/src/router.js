@@ -12,9 +12,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "auth" */ './views/auth/Auth.vue'),
       children: [
         {
-          path: 'books',
+          path: '/books',
           name: 'bookList',
           component: () => import(/* webpackChunkName: "book-list" */ './views/auth/screens/bookList/BookList.vue')
+        },
+        {
+          path: '/books/:id',
+          name: 'bookDetail',
+          component: () => import(/* webpackChunkName: "book-detail" */ './views/auth/screens/bookDetail/BookDetail.vue')
         }
       ]
     },

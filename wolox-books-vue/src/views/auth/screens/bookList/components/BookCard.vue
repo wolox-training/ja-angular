@@ -1,5 +1,5 @@
 <template lang="pug">
-  .card.column
+  div.card.column(@click="goToBookDetails")
     img.img.m-bottom-2(:src="book.image_url" alt="book_cover")
     h3.title.m-bottom-1.bold {{book.title}}
     p.author {{book.author}}
@@ -10,6 +10,12 @@
 export default {
   props: {
     book: Object
+  },
+  methods: {
+    goToBookDetails () {
+      const bookId = this.book.id
+      this.$router.push({ name: 'bookDetail', params: { id: bookId } })
+    }
   }
 }
 </script>
@@ -24,6 +30,7 @@ export default {
     margin-bottom: 35px;
     background-color: $white;
     padding: 20px;
+    cursor: pointer;
   }
 
   .img {
