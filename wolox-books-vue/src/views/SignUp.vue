@@ -16,8 +16,10 @@
         div.form-item
           span.name Password
           input.input(v-model="password")
-        button.btn.primary.full-width.m-bottom-2(@click="logInfo") Sign Up
-      router-link.btn.secondary.full-width.m-top-2(to="") Log In
+        button.btn.primary.full-width.m-bottom-2(@click="logInfo")
+          | Sign Up
+      router-link.btn.secondary.full-width.m-top-2(to="")
+        | Log In
 </template>
 
 <script>
