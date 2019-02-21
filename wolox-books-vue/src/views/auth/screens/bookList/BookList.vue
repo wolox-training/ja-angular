@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.row.wrap.space-between
+  .row.wrap.space-between
     book-card(v-for="book in books" :key="book.id" :book="book")
 </template>
 

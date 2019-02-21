@@ -1,6 +1,6 @@
 <template lang="pug">
-  div.card.column
-    img(:src="book.image_url" alt="book_cover").img.m-bottom-2
+  .card.column
+    img.img.m-bottom-2(:src="book.image_url" alt="book_cover")
     h3.title.m-bottom-1.bold {{book.title}}
     p.author {{book.author}}
 
