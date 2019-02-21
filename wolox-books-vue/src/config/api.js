@@ -6,6 +6,6 @@ const token = localStorageService.getValue(localStorageService.SESSION_TOKEN)
 
 export const api = create(
   {
-    baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1',
+    baseURL: process.env.VUE_APP_BASE_URL,
     headers: { authorization: `bearer ${token}` }
   })
