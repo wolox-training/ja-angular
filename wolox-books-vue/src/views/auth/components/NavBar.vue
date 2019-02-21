@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../scss/colors.scss';
+@import '../../../scss/colors';
 
   .navbar {
     height: 60px;

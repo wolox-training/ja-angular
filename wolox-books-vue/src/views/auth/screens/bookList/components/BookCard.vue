@@ -8,14 +8,14 @@
 
 <script>
 export default {
-  props: [
-    'book'
-  ]
+  props: {
+    book: Object
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  @import '../../../../../scss/colors.scss';
+  @import '../../../../../scss/colors';
 
   .card {
     width: 230px;
@@ -30,7 +30,7 @@ export default {
     width: 190px;
     height: 160px;
     background-color: $alto;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .title {

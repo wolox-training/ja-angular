@@ -1,9 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import SignUp from './views/SignUp.vue'
-import SignIn from './views/SignIn.vue'
-import Auth from './views/auth/Auth.vue'
-import BookList from './views/auth/screens/bookList/BookList.vue'
 
 Vue.use(Router)
 
@@ -13,24 +9,24 @@ export default new Router({
       path: '',
       redirect: { name: 'bookList' },
       name: 'home',
-      component: Auth,
+      component: () => import(/* webpackChunkName: "auth" */ './views/auth/Auth.vue'),
       children: [
         {
           path: 'books',
           name: 'bookList',
-          component: BookList
+          component: () => import(/* webpackChunkName: "book-list" */ './views/auth/screens/bookList/BookList.vue')
         }
       ]
     },
     {
       path: '/signUp',
       name: 'signUp',
-      component: SignUp
+      component: () => import(/* webpackChunkName: "sign-up" */ './views/SignUp.vue')
     },
     {
       path: '/signIn',
       name: 'signIn',
-      component: SignIn
+      component: () => import(/* webpackChunkName: "sign-in" */ './views/SignIn.vue')
     }
   ]
 })
