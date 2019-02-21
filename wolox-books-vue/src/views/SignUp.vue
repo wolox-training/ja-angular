@@ -3,7 +3,7 @@
     .form.column.center.middle
       img.logo(src='../assets/wolox-logo.png' alt="wolox-logo")
       h2.title books
-      form.content
+      form.content(@submit.prevent)
         .form-item
           span.name(:class="{error: $v.firstName.$error}")
             | First name
