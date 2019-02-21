@@ -7,8 +7,16 @@ export default new Router({
   routes: [
     {
       path: '',
+      redirect: { name: 'bookList' },
       name: 'home',
-      component: () => import(/* webpackChunkName: "sign-up" */ './views/NavBar.vue')
+      component: () => import(/* webpackChunkName: "auth" */ './views/auth/Auth.vue'),
+      children: [
+        {
+          path: 'books',
+          name: 'bookList',
+          component: () => import(/* webpackChunkName: "book-list" */ './views/auth/screens/bookList/BookList.vue')
+        }
+      ]
     },
     {
       path: '/signUp',

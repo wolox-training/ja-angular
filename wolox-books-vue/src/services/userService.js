@@ -1,10 +1,8 @@
-import { create } from 'apisauce'
+import { api } from '../config/api'
 
 export class UserService {
-  api = create({ baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1' })
-
   createUser (user) {
-    return this.api.post('/users', user)
+    return api.post('/users', user)
   }
 
   signIn (email, password) {
@@ -15,6 +13,6 @@ export class UserService {
       }
     }
 
-    return this.api.post('/users/sessions', session)
+    return api.post('/users/sessions', session)
   }
 }
