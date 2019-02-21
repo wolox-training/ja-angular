@@ -7,7 +7,8 @@ export default new Router({
   routes: [
     {
       path: '',
-      redirect: { name: 'signUp' }
+      name: 'home',
+      component: () => import(/* webpackChunkName: "sign-up" */ './views/NavBar.vue')
     },
     {
       path: '/signUp',
