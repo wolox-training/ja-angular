@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../../scss/colors.scss';
+  @import '../../scss/colors';
   .body {
     min-height: 100vh;
     background-color: $wild-sand;

@@ -10,12 +10,12 @@ import BookCard from './components/BookCard.vue'
 const booksService = new BooksService()
 
 export default {
-  data: () => {
+  data () {
     return {
       books: null
     }
   },
-  created: function () {
+  created () {
     booksService.getBooks()
       .then(books => {
         this.books = books.data
