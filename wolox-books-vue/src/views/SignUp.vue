@@ -30,7 +30,7 @@
             | El campo es requerido
         button.btn.primary.full-width.m-bottom-2(@click="logInfo")
           | Sign Up
-      router-link.btn.secondary.full-width.m-top-2(to="")
+      router-link.btn.secondary.full-width.m-top-2(:to="{ name: 'signIn' }")
         | Log In
 </template>
 
@@ -62,14 +62,17 @@ export default {
               email: this.email,
               password: this.password,
               password_confirmation: this.password,
-              locale: "en"
+              locale: 'en'
             }
           }
         userService.createUser(data)
-          .then(res => console.log(res))
+          .then(response => {
+            if (response.ok) {
+              this.$router.push({ name: 'signIn' })
+            }
+          })
       }
     }
-
   },
   validations: {
     email: { required },
