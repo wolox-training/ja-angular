@@ -5,14 +5,13 @@
 
 <script>
 import BookCard from './components/BookCard.vue'
+import { mapState } from 'vuex'
 
 export default {
-  computed: {
-    books () {
-      return this.$store.state.books
-    }
-  },
-  created: function () {
+  computed: mapState ([
+    'books'
+  ]),
+  created () {
     this.$store.dispatch('getBooks')
   },
   components: {
