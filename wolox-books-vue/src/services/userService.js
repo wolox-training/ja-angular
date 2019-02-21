@@ -6,4 +6,15 @@ export class UserService {
   createUser (user) {
     return this.api.post('/users', user)
   }
+
+  signIn (email, password) {
+    const session = {
+      session: {
+        email: email,
+        password: password
+      }
+    }
+
+    return this.api.post('/users/sessions', session)
+  }
 }
