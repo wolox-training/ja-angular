@@ -17,6 +17,7 @@
 <script>
 import { UserService } from '../services/userService'
 import { LocalStorageService } from '../services/localStorageService'
+import { api } from '../config/api'
 
 const userService = new UserService()
 const localStorageService = new LocalStorageService()
@@ -34,7 +35,11 @@ export default {
       userService.signIn(this.email, this.password)
         .then(response => {
           if (response.ok) {
-            localStorageService.setValue(localStorageService.SESSION_TOKEN, response.data.access_token)
+            const token = response.data.access_token
+            localStorageService.setValue(localStorageService.SESSION_TOKEN, token)
+            api.setHeaders({
+              headers: { authorization: `bearer ${token}` }
+            })
             this.$router.push({ name: 'home' })
           }
         })
