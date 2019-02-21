@@ -1,19 +1,19 @@
 <template lang="pug">
-  div.container.column.center.middle
-    div.form.column.center.middle
-      img.logo(src='../../src/assets/wolox-logo.png')
+  .container.column.center.middle
+    .form.column.center.middle
+      img.logo(src='../../src/assets/wolox-logo.png' alt="wolox-logo")
       h2.title books
-      form.content
-        div.form-item
+      form.content(@submit.prevent)
+        .form-item
           span.name First name
           input.input(v-model="firstName")
-        div.form-item
+        .form-item
           span.name Last name
           input.input(v-model="lastName")
-        div.form-item
+        .form-item
           span.name Email
           input.input(v-model="email")
-        div.form-item
+        .form-item
           span.name Password
           input.input(v-model="password")
         button.btn.primary.full-width.m-bottom-2(@click="logInfo")
