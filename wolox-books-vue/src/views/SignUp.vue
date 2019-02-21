@@ -28,8 +28,10 @@
           input.input(v-model.trim="$v.password.$model")
           span.error-label(v-if="!$v.password.required && $v.password.$dirty")
             | El campo es requerido
-        button.btn.primary.full-width.m-bottom-2(@click="logInfo") Sign Up
-      router-link.btn.secondary.full-width.m-top-2(to="") Log In
+        button.btn.primary.full-width.m-bottom-2(@click="logInfo")
+          | Sign Up
+      router-link.btn.secondary.full-width.m-top-2(to="")
+        | Log In
 </template>
 
 <script>
