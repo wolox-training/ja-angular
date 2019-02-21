@@ -1,8 +1,8 @@
 <template lang="pug">
-  div.card.full-width.row(v-if="book")
+  .card.full-width.row(v-if="book")
     img.img.m-right-4(:src="book.image_url")
-    div.column.grow
-      div.header.row.full-width.m-bottom-2
+    .column.grow
+      .header.row.full-width.m-bottom-2
         p.title.bold.m-right-1 {{ book.title }}
         p.subtitle ({{ book.genre }})
       span.m-bottom-2
