@@ -1,0 +1,18 @@
+@import 'colors';
+
+.btn {
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+
+  &.primary {
+    background-color: $celery;
+    color: $white;
+  }
+
+  &.secondary {
+    background-color: $wild-sand;
+    color: $celery;
+    border: 2px solid $celery;
+  }
+}
