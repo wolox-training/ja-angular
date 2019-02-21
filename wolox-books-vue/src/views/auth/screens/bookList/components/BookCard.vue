@@ -8,9 +8,9 @@
 
 <script>
 export default {
-  props: [
-    'book'
-  ],
+  props: {
+    book: Object
+  },
   methods: {
     goToBookDetails () {
       const bookId = this.book.id
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../../../../../scss/colors.scss';
+  @import '../../../../../scss/colors';
 
   .card {
     width: 230px;
@@ -37,7 +37,7 @@ export default {
     width: 190px;
     height: 160px;
     background-color: $alto;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .title {

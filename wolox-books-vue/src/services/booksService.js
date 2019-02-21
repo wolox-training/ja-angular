@@ -7,12 +7,12 @@ export class BooksService {
 
   api = create(
     {
-      baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1/books',
+      baseURL: 'https://wbooks-api-stage.herokuapp.com/api/v1',
       headers: { authorization: `bearer ${this.token}` }
     })
 
   getBooks () {
-    return this.api.get()
+    return this.api.get('/books')
   }
 
   getBook (bookId) {
