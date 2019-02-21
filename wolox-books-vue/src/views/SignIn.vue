@@ -1,13 +1,13 @@
 <template lang="pug">
-  div.container.column.center.middle
-    div.form.column.center.middle
+  .container.column.center.middle
+    .form.column.center.middle
       img.logo(src='../assets/wolox-logo.png' alt="wolox-logo")
       h2.title books
       form.content
-        div.form-item
+        .form-item
           span.name Email
           input.input(v-model="email")
-        div.form-item
+        .form-item
           span.name Password
           input.input(v-model="password")
         button.btn.primary.full-width.m-bottom-2(@click="signIn") Log In
@@ -20,7 +20,7 @@ import { UserService } from '../services/userService'
 const userService = new UserService()
 
 export default {
-  data: () => {
+  data () {
     return {
       email: '',
       password: ''
