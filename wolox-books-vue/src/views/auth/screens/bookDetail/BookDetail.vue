@@ -1,19 +1,19 @@
 <template lang="pug">
   div.card.full-width.row(v-if="book")
     img.img.m-right-4(:src="book.image_url")
-    div.details.column
+    div.column.grow
       div.header.row.full-width.m-bottom-2
-        p.title.bold.m-right-1 {{book.title}}
-        p.subtitle ({{book.genre}})
+        p.title.bold.m-right-1 {{ book.title }}
+        p.subtitle ({{ book.genre }})
       span.m-bottom-2
         strong.bold.m-right-1 {{ $t("bookDetail.author")}}:
-        | {{book.author}}
+        | {{ book.author }}
       span.m-bottom-2
         strong.bold.m-right-1 {{ $t("bookDetail.publisher")}}:
-        | {{book.publisher}}
+        | {{ book.publisher }}
       span.m-bottom-2
         strong.bold.m-right-1 {{ $t("bookDetail.year")}}:
-        | {{book.year}}
+        | {{ book.year }}
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../../../../scss/colors.scss';
+  @import '../../../../scss/colors';
 
   .card {
     box-shadow: 8px 8px 6px -6px $alto;
@@ -50,11 +50,7 @@ export default {
     width: 300px;
     height: 300px;
     background-color: $alto;
-    object-fit: contain;
-  }
-
-  .details {
-    flex: 1;
+    object-fit: cover;
   }
 
   .header {
@@ -73,5 +69,4 @@ export default {
       line-height: $title-font-size;
     }
   }
-
 </style>

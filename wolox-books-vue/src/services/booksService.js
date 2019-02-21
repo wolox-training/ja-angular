@@ -6,6 +6,6 @@ export class BooksService {
   }
 
   getBook (bookId) {
-    return this.api.get(`/${bookId}`)
+    return api.get(`/books/${bookId}`)
   }
 }
