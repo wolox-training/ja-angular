@@ -13,7 +13,7 @@ angular.module('app-bootstrap').config([
         abstract: true,
         views: {
           main: {
-            templateUrl: '../app/components/centered/centered.html'
+            templateUrl: '../app/components/auth/auth.html'
           }
         }
       })
@@ -21,9 +21,9 @@ angular.module('app-bootstrap').config([
         url: '/state1',
         views: {
           content: {
-            templateUrl: '../app/components/centered/component1/component1.html',
-            controller: 'Component1Controller',
-            controllerAs: 'comp1Ctrl'
+            templateUrl: '../app/components/auth/dashboard/dashboard.html',
+            controller: 'DashboardController',
+            controllerAs: 'vm'
           }
         }
       })
@@ -31,7 +31,7 @@ angular.module('app-bootstrap').config([
         url: '/state2',
         views: {
           content: {
-            templateUrl: '../app/components/centered/component2/component2.html',
+            templateUrl: '../app/components/auth/component2/component2.html',
             controller: 'Component2Controller',
             controllerAs: 'comp2Ctrl'
           }
