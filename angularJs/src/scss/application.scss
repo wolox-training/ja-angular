@@ -1,4 +1,7 @@
+@import '../../node_modules/wolox-equalizer/equalizer.scss';
 @import 'variables/colors';
 @import 'base';
-@import '../app/components/centered/dashboard/dashboard.scss';
-@import '../app/components/centered/component2/component2.scss';
+@import 'layout';
+@import 'margins';
+@import '../app/components/auth/dashboard/dashboard.scss';
+@import '../app/components/auth/component2/component2.scss';

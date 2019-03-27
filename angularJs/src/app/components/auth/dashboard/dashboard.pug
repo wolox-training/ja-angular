@@ -1,6 +1,10 @@
-h1.frontend-bootstrap-component-1
-  | {{vm.component1Phrase}}
-h1.frontend-bootstrap-component-1
-  | {{ 'COMPO1.TITLE' | translate }}
-a(ui-sref='centered.state2')
-  | Go to state2
+.container.column
+  .row.m-left-3
+    select.filter.m-right-3 asd
+      option(value="") Seleccionar filtro
+    input.filter(placeholder="Buscar...")
+  .row.wrap
+    .book.column(ng-repeat="book in vm.books")
+      .image-container.m-bottom-1
+      h3.title {{book.title}}
+      h4.subtitle {{book.author}}
