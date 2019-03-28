@@ -1,7 +1,16 @@
 angular.module('app-bootstrap').controller('DashboardController', [
   function () {
+    const vm = this;
 
-    this.component1Phrase = 'This is component 1';
+    vm.filterText = '';
+    vm.filterBy = '';
+
+    vm.filter = (book) => {
+      if( vm.filterBy) {
+        return book[vm.filterBy].includes(vm.filterText);
+      }
+      return true;
+    }
     this.books = [
       {
          "id":1,
