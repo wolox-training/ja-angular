@@ -1,12 +1,14 @@
 .container.column
   .row.m-left-3.m-bottom-3
-    select.filter.m-right-3(ng-model="vm.filterBy") asd
+    select.filter.select.m-right-3(ng-model="vm.filterBy")
       option(value="") Seleccionar filtro
       option(value="title") Titulo
       option(value="author") Autor
     input.filter(placeholder="Buscar..." ng-model="vm.filterText")
+    button.search-button(ng-click="vm.searchBooks()")
+      img(src="../../../../assets/search.svg" alt="search")
   .row.wrap
-    .book.column(ng-repeat="book in vm.books | filter: vm.filter")
+    .book.column(ng-repeat="book in vm.books")
       img.image-container.m-bottom-1(ng-src="{{book.image_url}}" alt="{{book.title}}")
       h3.title {{book.title}}
       h4.subtitle {{book.author}}

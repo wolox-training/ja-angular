@@ -1,17 +1,6 @@
 angular.module('app-bootstrap').controller('DashboardController', [
   function () {
-    const vm = this;
-
-    vm.filterText = '';
-    vm.filterBy = '';
-
-    vm.filter = (book) => {
-      if( vm.filterBy) {
-        return book[vm.filterBy].includes(vm.filterText);
-      }
-      return true;
-    }
-    this.books = [
+    const data = [
       {
          "id":1,
          "author":"Emmie Thiel",
@@ -95,5 +84,19 @@ angular.module('app-bootstrap').controller('DashboardController', [
       }
    ]
    
+    this.filterText = '';
+    this.filterBy = '';
+    this.books = [];
+
+    this.filter = (book) => {
+      if (this.filterBy) {
+        return book[this.filterBy].includes(this.filterText);
+      }
+      return true;
+    }
+
+    this.searchBooks = () => {
+      this.books = data.filter(book => this.filter(book));
+    }
   }
 ]);
