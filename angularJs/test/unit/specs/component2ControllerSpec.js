@@ -9,7 +9,7 @@ describe('Component 2', function () {
   });
 
   beforeEach(inject(function ($controller) {
-    component2Controller = $controller('Component2Controller', {});
+    component2Controller = $controller('BookDetailController', {});
   }));
 
   it('gets components phrase', function () {

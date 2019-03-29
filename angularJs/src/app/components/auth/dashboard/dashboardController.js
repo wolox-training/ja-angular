@@ -1,5 +1,5 @@
-angular.module('app-bootstrap').controller('DashboardController', [
-  function () {
+angular.module('app-bootstrap').controller('DashboardController', [ '$state',
+  function ($state) {
     const data = [
       {
          "id":1,
@@ -97,6 +97,11 @@ angular.module('app-bootstrap').controller('DashboardController', [
 
     this.searchBooks = () => {
       this.books = data.filter(book => this.filter(book));
+    }
+
+    this.goToBookDetail = (book) => {
+      console.log(book);
+      $state.go('centered.detail')
     }
   }
 ]);

@@ -1,0 +1,31 @@
+.column.main-container
+  a(ui-sref='centered.dashboard') < Volver
+  .column.secondary-container.center
+    .row.section
+      img.book-detail-image.m-right-2
+      .column.space-between
+        .column
+          h2.title.m-bottom-1 {{vm.book.title}}
+          h4.subtitle.m-bottom-2 {{vm.book.author}}
+          h4.subtitle.m-bottom-1 {{vm.book.year}}
+          h4.subtitle.m-bottom-1 {{vm.book.theme}}
+          p.description {{vm.book.description}}
+        button.button.main Alquilar
+    .section.column
+      h2.section-text Sugerencias
+      .row
+        img.book-suggestion(ng-repeat="recommendation in vm.book.recommended")
+    .section.column.comments
+      h2.section-text Comentarios
+      .row
+        img.avatar.m-right-2
+        .column.item-1
+          span.m-bottom-2 Agregar comentario
+          textarea.m-bottom-2.comment.area
+          button.button.secondary.m-bottom-2 Enviar
+      .row(ng-repeat="comment in vm.book.comments")
+        img.avatar.m-right-2
+        .column.item-1
+          span.m-bottom-1 {{comment.author}}
+          span.date.m-bottom-1 {{comment.date}}
+          p.m-bottom-2.comment {{comment.comment}}

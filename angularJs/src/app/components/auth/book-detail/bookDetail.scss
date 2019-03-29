@@ -1,0 +1,85 @@
+.main-container {
+  width: 100%;
+  padding: 35px;
+}
+
+.secondary-container {
+  max-width: 800px;
+  width: 100%;
+  align-self: center;
+}
+
+.book-detail-image {
+  height: 270px;
+  width: 190px;
+  background-color: $dusty-gray;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 16px;
+}
+
+.description {
+  color: $dusty-gray;
+}
+
+.rent-button {
+  background-color: $cerulean;
+  font-weight: bold;
+  padding: 7px 60px;
+  color: $white;
+  font-size: 20px;
+  width: fit-content;
+}
+
+.book-suggestion {
+  width: 90px;
+  height: 125px;
+  object-fit: cover;
+  cursor: pointer;
+  background-color: $dusty-gray;
+  margin-left: 50px;
+}
+
+.section {
+  padding: 35px 0;
+  width: 100%;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $cerulean;
+  }
+
+  .section-text {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    color: $atlantis;
+    margin-bottom: 15px;
+  }
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: $dusty-gray;
+}
+
+.comment {
+  resize: vertical;
+  width: 100%;
+  min-height: 75px;
+
+  &.area {
+    border: 1px solid $black;
+  }
+}
+
+.date {
+  font-size: 12px;
+}

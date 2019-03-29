@@ -8,7 +8,7 @@
     button.search-button(ng-click="vm.searchBooks()")
       img(src="../../../../assets/search.svg" alt="search")
   .row.wrap
-    .book.column(ng-repeat="book in vm.books")
+    .book.column(ng-repeat="book in vm.books" ng-click="vm.goToBookDetail(book)")
       img.image-container.m-bottom-1(ng-src="{{book.image_url}}" alt="{{book.title}}")
       h3.title {{book.title}}
       h4.subtitle {{book.author}}
