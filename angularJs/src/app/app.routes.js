@@ -36,7 +36,36 @@ angular.module('app-bootstrap').config([
             controllerAs: 'vm'
           }
         }
-      });
+      })
+      .state('unauth', {
+        abstract: true,
+        views: {
+          main: {
+            templateUrl: '../app/components/unauth/unauth.html'
+          }
+        }
+      })
+      .state('unauth.signUp', {
+        url: '/sign-up',
+        views: {
+          content: {
+            templateUrl: '../app/components/unauth/sign-up/signUp.html',
+            controller: 'SignUpController',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      .state('unauth.signIn', {
+        url: '/sign-in',
+        views: {
+          content: {
+            templateUrl: '../app/components/unauth/sign-in/signIn.html',
+            controller: 'SignInController',
+            controllerAs: 'vm'
+          }
+        }
+      })
+      ;
 
     $locationProvider.html5Mode(true);
   }

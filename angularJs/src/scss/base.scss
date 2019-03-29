@@ -25,3 +25,13 @@ $navbar-height: 50px;
     background-color: $atlantis;
   }
 }
+
+.input {
+  background-color: $wild-sand;
+  padding: 5px;
+}
+
+.full-screen {
+  min-height: 100vh;
+  min-width: 100vw;
+}
